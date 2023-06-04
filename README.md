@@ -129,3 +129,14 @@ docker restart kibana
 docker pull kibana:7.17.0
 docker run -d --name kibana --link elasticsearch:elasticsearch --net elastic -p 5601:5601 kibana:7.17.0
 ```
+
+# 项目截图
+
+<img width="1279" alt="2eaf3a9aac1470d7f6207b1c9a5a98a" src="https://github.com/ErYueWink/shopping/assets/133645961/de60d987-7b5e-4c0a-a0ed-ae5374a13428">
+
+<img width="1280" alt="57a9a8fca111b4020e6a69937370e0c" src="https://github.com/ErYueWink/shopping/assets/133645961/716e8448-4d04-4c69-84be-954b8149dd3f">
+
+![e1db2289d33b945b6d58fb7a5a4bbcb](https://github.com/ErYueWink/shopping/assets/133645961/48f973b4-9da8-4120-8f1c-17643830f9d7)
+![7e4300401a8beb6d1cee6eb5f3a2e13](https://github.com/ErYueWink/shopping/assets/133645961/95347a12-fcff-4466-9ec5-e8fac3fd09e6)
+![347c2adddb48980abe475a2b854d289](https://github.com/ErYueWink/shopping/assets/133645961/2e2bbd85-b828-41c7-a4bb-cb71c8e57586)
+
