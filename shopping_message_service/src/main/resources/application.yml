@@ -19,7 +19,3 @@ dubbo:
     port: -1 # 端口自动分配
   scan:
     base-packages: com.itbaizhan.shopping_message_service.service # 包扫描
-
-message:
-  accessKeyID: LTAI5t6EnHwa4VPs3cUPAjR4
-  accessKeySecret: xlpLRIV8XJH2t4EdMjBPaFYRxKp6xT
