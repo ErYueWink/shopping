@@ -1,0 +1,41 @@
+server:
+  port: 9009
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+# 配置数据源
+spring:
+  redis:
+    host: 192.168.66.199
+    port: 6379
+    timeout: 30000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+  rabbitmq:
+    host: 192.168.66.199
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+
+# 配置dubbo
+dubbo:
+  application:
+    name: shopping_cart_service # 项目名
+  registry:
+    address: zookeeper://192.168.66.199 # 注册中心地址
+    port: 2181 # 端口号
+    timeout: 10000 # 超时时间
+  protocol:
+    name: dubbo # 使用的协议
+    port: -1 # 端口自动分配
+  scan:
+    base-packages: com.itbaizhan.shopping_cart_service.service # 要扫描的包

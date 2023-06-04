@@ -1,0 +1,25 @@
+server:
+  port: 9007
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+# 配置dubbo
+dubbo:
+  application:
+    name: shopping_message_service # 项目名
+  registry:
+    address: zookeeper://192.168.66.199 # 注册中心地址
+    port: 2181 # 端口号
+    timeout: 10000 # 注册到注册中心的超时时间
+  protocol:
+    name: dubbo # dubbo使用的协议
+    port: -1 # 端口自动分配
+  scan:
+    base-packages: com.itbaizhan.shopping_message_service.service # 包扫描
+
+message:
+  accessKeyID: LTAI5t6EnHwa4VPs3cUPAjR4
+  accessKeySecret: xlpLRIV8XJH2t4EdMjBPaFYRxKp6xT

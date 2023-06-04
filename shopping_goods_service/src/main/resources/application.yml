@@ -1,0 +1,47 @@
+server:
+  port: 9001
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+# 配置数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///baizhanshopping?serverTimezone-UTC
+    username: root
+    password: root
+  rabbitmq:
+    host: 192.168.66.199
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+# 配置mp
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: bz_
+      id-type: auto
+  configuration:
+    # 关闭列名驼峰映射规则
+    map-underscore-to-camel-case: false
+    # 开启sql日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 配置dubbo
+dubbo:
+  application:
+    name: shopping_goods_service
+  registry:
+    address: zookeeper://192.168.66.199
+    port: 2181
+    timeout: 10000
+  protocol:
+    name: dubbo
+    port: -1
+  scan:
+    base-packages: com.itbaizhan.shopping_goods_service.service

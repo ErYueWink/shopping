@@ -1,0 +1,30 @@
+server:
+  port: 9003
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+# 配置dubbo
+dubbo:
+  application:
+    name: shopping_file_service
+  registry:
+    address: zookeeper://192.168.66.199
+    port: 2181
+    timeout: 10000
+  protocol:
+    name: dubbo
+    port: -1
+  scan:
+    base-packages: com.itbaizhan.shopping_file_service.service
+
+# 配置fastdfs
+fdfs:
+  so-timeout: 3000
+  connect-timeout: 6000
+  tracker-list:
+    - 192.168.66.199:22122
+  # 自定义配置
+  fileUrl: http://192.168.66.199:8888

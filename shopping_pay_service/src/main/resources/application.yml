@@ -1,0 +1,51 @@
+# 端口
+server:
+  port: 9011
+
+# 日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+# Mybatis-Plus起步依赖
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: bz_
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+
+spring:
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///baizhanshopping?serverTimezone=UTC
+    username: root
+    password: root
+
+# dubbo
+dubbo:
+  application:
+    name: shopping_pay_service
+  registry:
+    address: zookeeper://192.168.66.199
+    port: 2181
+    timeout: 10000
+  protocol:
+    name: dubbo
+    port: -1
+  scan:
+    base-packages: com.itbaizhan.shopping_pay_service.service
+
+
+# 支付配置
+alipay:
+  appId: 2021000122693369
+  privateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBuSTSFMzua0NP331pnYfHCzh58dfcITkU/v9Shm01zWhwhv/C2CLJR2XPhlPitHQSOQpvrsvLLqFmGla6oXmX5weMA+gFHejrec+ZusXZ06jWqSs5UesZtq72FBVWEclq6A1qbcD+LvO9I/vn6koUkh1zvf/aOAM53aon/0TRUXa9rKB6wkPKcZbC44QEtL07pvVrhuYIPSDXNRKr8P8MdMTe2phyT0cEGJnosCKd1SeJBmbCXXVpCbeGqeWmUVZaDkmZpR5S918CDHgCON57KOCYrbyHyX/+ik7NisHT+SvKJBN3HeSMXeuMi+o8FzmqsNLkBE9Hi1XCezax+IK/AgMBAAECggEASytiRDpaArGQXu/jpBXCV9PcyES1c+9YTPNdc1JCEjxwKCnaGGrxpJSVxt7isfc/isqjaA61eVPQwOO7f5OksPKulP/3CfU/KhAMJCS7HPjqbNEbupQ027dtUIMefFVOiLMecYvA9WCWp2/NEYJx2GWSFBVHsA9IAS4oFnkQ5P9AX2+0eVJ+CZLeeIuCFnuKcvMoxm4Jl27Km1PdrgkaAszLYFCNTfnGpZPVH5PjYuCcoqUO3JXHEPX6D4T0l197DYyIXYIPol/Xk3I8+L9FyNl5ZHORyJGeUh1dEMBgOrQj/mYyuOXPgU7vv066RHdXCxT8NNvKNz6VK3vBzcX6UQKBgQDmCb8Dw6HLHd1jJK1ZwKi/JHyElEAIBYXSsnl2uFFSm174yGYOkSKFMUpEliRp76qZ8RMh+3Z2F8LuwLRELLd+WQGn83GcQbXdaPbUNv6bim199xiU7Z1pvnKdbl0avJHG2iYN1flivyu2ZX5O2vQr0qaDBT1pFzvCJKS/LrDQrQKBgQDXljCeNwvxAzmo8Wd8fe9aYOETi6V+0uUHSrNDgVtrfc0xfXCYod0U8R9dR/xMopwIEwfZq1U2dM1OsAYPCg89NLJK2jjuw86LFo9DZ2b5G92mgKyrImH50wLnKvouW9/3zrBvgGZcPa28xUycDU3c/swgS72WKr7zu/LNWPYSmwKBgD0EyM5OzlP6kAcEa5crK5fILd9dE78M9/pzrRR4v9mRrReA0NF8XhPGh1S6Ht6a3D4JXHHfKgUZOHPsWeTbl7DEG1RZlwFDzOH2PcL883x+s5x+Nt8KSH8MLYrlA31cF68Pnph88bHn08iGE4MHQU1+ivymHywJJajR34F2+R/hAoGAC8bMiRgAsv22HKBzQr2uYYWBRgwO0kq68BcIi9t5HvoUR2vOxsewyAAT8oiII7eORnKjryRI11yyCmZbLl8iTfme86/QBFr14WsuEESJv3niNcI5rG+IYplAQ1h5qiaiqWrFAJJHBSrpXrJ4aN3hLv1MMUdx584V+EKAFO+TIZkCgYEAkU2DpcZlC8lC4QKg75SJuhEPcflXskHAFw4GAWgmPQyanFQ9kaft5kH1huE4i8vsl32BWjJjNnsV1x/Ztlo83nsyVO4iEGDjI7nv3mxmHKRwjjfROJDuHSqLXCWVt4G98LjAlA25b7eog+V8zP1xyxsKvN+d6WO2I4UaAxivpnE=
+  publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzNs2WE3JTP93CHNn+lREXOULBHFzma66umxRPYDfM3ryAd/tUv0rbRzmJTJ4wNvOzI/q5QLZUsAL8J4qM6Y+vB1IeNAJSMfEB5Ma1ecQPAcgGHD7K8C3arethokGGtEQubH3PjI7/84ffp0+y4MNPhi2Xu6HKnzAE/Di0IQb3mspKlUCD0tdcZR7r/bzytmK4cAOiRXa7KzBSPy/lDeu/wKTbWU9aYM8T+6++xhDZhj1hnzjZv/UJZ9Dpu2PBAnEZW15AiqAPxwkVGS8fyy3JvHCdVKZD59fRO9KXftfgZnK9qdg1KdPM2Bkc3shtTiNm6Myn4KiOKZ90YyY3/GhNQIDAQAB/UoZtNc1ocIb/wtgiyUdlz4ZT4rR0EjkKb67Lyy6hZhpWuqF5l+cHjAPoBR3o63nPmbrF2dOo1qkrOVHrGbau9hQVVhHJaugNam3A/i7zvSP75+pKFJIdc73/2jgDOd2qJ/9E0VF2vaygesJDynGWwuOEBLS9O6b1a4bmCD0g1zUSq/D/DHTE3tqYck9HBBiZ6LAindUniQZmwl11aQm3hqnlplFWWg5JmaUeUvdfAgx4AjjeeyjgmK28h8l//opOzYrB0/kryiQTdx3kjF3rjIvqPBc5qrDS5ARPR4tVwns2sfiCvwIDAQAB
+  gateway: https://openapi.alipaydev.com/gateway.do
+  notifyUrl: http://25uviq.natappfree.cc
+  pcNotify: /user/payment/success/notify
+

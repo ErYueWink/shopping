@@ -1,0 +1,2 @@
+# 启动时自动扫描统一异常类 并放入容器中
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.itbaizhan.shopping_common.exception.GlobalExceptionHandler
