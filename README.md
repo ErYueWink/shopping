@@ -27,7 +27,7 @@ JAVA版本：JDK11
 
 # 安装服务
 
-### 安装码头工人
+### 安装docker
 
 ```
 yum install -y docker
@@ -44,7 +44,7 @@ docker run -id --name=mysql -p 3306:3306 MYSQL_ROOT_PASSWORD=root mysql:5.7
 
 
 
-### 安装动物园管理员
+### 安装zookeeper
 
 ```
 docker pull zookeeper:3.5.9
@@ -63,7 +63,7 @@ docker run -d --name dubbo-admin -p 9600:8080 -e admin.registry.address=zookeepe
 
 
 
-### 安装瑞迪斯
+### 安装redis
 
 ```
 docker pull redis:6.2.6
